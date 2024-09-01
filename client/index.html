@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>&lt;h1&gt;teq WebSockets demo...</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mainContainer">
+            <div id="zoomContainer">
+                <div class="button-container" id="buttonContainer">
+                    <div onClick="zoomIn(false)" class="big-btn">
+                        +
+                    </div>
+                    <div onClick="zoomOut(false)" class="big-btn">-</div>
+                    <div onClick="zoomReset(false)" class="big-btn">&#174;</div>
+                </div>
+                <div id="zoomImageContainer">
+                    <div id="zoomLabel">
+                        <div style="font-size: 17px;">zoom <span id="zoomLevel"></span>%</div>
+                    </div>
+                    <div id="mainTagImageContainer">
+                        <div id="peerCursorBoxContainer">
+                            <div id="peerCursorBox">
+                                <img src="peer-cursor.png" id="peerCursor" width="25" />
+                                <div class="peer-cursor-user" id="remoteUserNameText">
+                                    peer_cursor
+                                </div>
+                            </div>
+                        </div>
+                        <img src="main-tag-image.jpg" id="mainTagImage" style="width: 100%;" />
+                        <div id="tagArea"></div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <table id="positionTable">
+                    <tr>
+                        <td colspan="3" id="positionLabelCell" style="vertical-align: top; border-bottom: none;">
+                            <div id="positionLabel">
+                                position
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="no-border">
+                        <td>
+                            &nbsp;
+                        </th>
+                        <td>
+                           me
+                        </th>
+                        <td>
+                           remote
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            x
+                        </td>
+                        <td>
+                            <span id="mX"></span>
+                        </td>
+                        <td>
+                            <span id="rmX"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            y
+                        </td>
+                        <td>
+                            <span id="mY"></span>
+                        </td>
+                        <td>
+                            <span id="rmY"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ox
+                        </td>
+                        <td>
+                            <span id="oX"></span>
+                        </td>
+                        <td>
+                            <span id="roX"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            oy
+                        </td>
+                        <td>
+                            <span id="oY"></span>
+                        </td>
+                        <td>
+                            <span id="roY"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            t
+                        </td>
+                        <td>
+                            <span id="pTop"></span>
+                        </td>
+                        <td>
+                            <span id="rpTop"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            l
+                        </td>
+                        <td>
+                            <span id="pLeft"></span>
+                        </td>
+                        <td>
+                            <span id="rpLeft"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            w
+                        </td>
+                        <td>
+                            <span id="pWidth"></span>
+                        </td>
+                        <td>
+                            <span id="rpWidth"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            h
+                        </td>
+                        <td>
+                            <span id="pHeight"></span>
+                        </td>
+                        <td>
+                            <span id="rpHeight"></span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div style="flex-grow: 1;">&nbsp;</div>
+        </div>
+    </div>
+
+    <script src="peer-move-event.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
